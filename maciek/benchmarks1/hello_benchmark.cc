@@ -50,6 +50,7 @@ static void push_back_small_vector(benchmark::State &state) {
     SmallVector<int> v(arena);
     for (int i = 0; i < size; ++i) {
       v.push_back(i);
+      benchmark::DoNotOptimize(v.data());
     }
   }
   state.counters["allocations"] = m.counters().malloc_calls();
