@@ -1,2 +1,5 @@
 add_executable(hello_benchmark hello_benchmark.cc)
 target_link_libraries(hello_benchmark benchmark)
+
+add_executable(accumulate_benchmark accumulate.cc)
+target_link_libraries(accumulate_benchmark benchmark)
