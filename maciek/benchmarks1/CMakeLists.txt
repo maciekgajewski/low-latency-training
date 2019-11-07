@@ -1,0 +1,2 @@
+add_executable(hello_benchmark hello_benchmark.cc)
+target_link_libraries(hello_benchmark benchmark)
