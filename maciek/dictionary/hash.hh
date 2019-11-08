@@ -24,8 +24,6 @@ public:
   }
 
   bool isInDictionary(std::string_view word) const {
-    // TODO
-
     auto hash = std::hash<std::string_view>()(word);
     auto index = indexFromHash(hash);
 
