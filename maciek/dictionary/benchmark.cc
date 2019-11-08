@@ -59,6 +59,9 @@ static void NotInDictionary(benchmark::State &state) {
 BENCHMARK_TEMPLATE(InDictionary, NonAllocatingUnorderedSetDict);
 BENCHMARK_TEMPLATE(NotInDictionary, NonAllocatingUnorderedSetDict);
 
+BENCHMARK_TEMPLATE(InDictionary, HashDict1);
+BENCHMARK_TEMPLATE(NotInDictionary, HashDict1);
+
 BENCHMARK_TEMPLATE(InDictionary, HashDict);
 BENCHMARK_TEMPLATE(NotInDictionary, HashDict);
 
