@@ -44,15 +44,16 @@ template <typename Initializer> static void visit(benchmark::State &state) {
     benchmark::DoNotOptimize(&sum);
   }
 
-  state.SetBytesProcessed(size * sizeof(int) * state.iterations());
+  state.SetBytesProcessed(2 * size * sizeof(int) * state.iterations());
+  state.counters["data"] = 2 * size * sizeof(int);
 }
 
 BENCHMARK_TEMPLATE(visit, InOrder)
     ->RangeMultiplier(2)
-    ->Range(1024 * 2, 1024 * 1024 * 4);
+    ->Range(1024, 1024 * 1024 * 4);
 
 BENCHMARK_TEMPLATE(visit, Shuffled)
     ->RangeMultiplier(2)
-    ->Range(1024 * 2, 1024 * 1024 * 4);
+    ->Range(1024, 1024 * 1024 * 4);
 
 BENCHMARK_MAIN();
