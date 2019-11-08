@@ -4,6 +4,7 @@
 #include "../benchmarks2/papipp.h"
 
 #include "dict.hh"
+#include "hash.hh"
 #include "utils.h"
 
 #include <fstream>
@@ -57,6 +58,9 @@ BENCHMARK_TEMPLATE(NotInDictionary, UnorderedSetDict);
 
 BENCHMARK_TEMPLATE(InDictionary, NonAllocatingUnorderedSetDict);
 BENCHMARK_TEMPLATE(NotInDictionary, NonAllocatingUnorderedSetDict);
+
+BENCHMARK_TEMPLATE(InDictionary, HashDict);
+BENCHMARK_TEMPLATE(NotInDictionary, HashDict);
 
 int main(int argc, char **argv) {
   static const int DICT_SIZE = 100'000;
