@@ -21,12 +21,12 @@ template <typename Container> static void accumulate(benchmark::State &state) {
   auto elements = state.range(0);
 
   fill(container, elements);
-  state.SetBytesProcessed(elements * sizeof(int));
 
   for (auto _ : state) {
     int sum = std::accumulate(container.begin(), container.end(), 0);
     benchmark::DoNotOptimize(&sum);
   }
+  state.SetBytesProcessed(elements * sizeof(int) * state.iterations());
 }
 
 BENCHMARK_TEMPLATE(accumulate, std::vector<int>)
