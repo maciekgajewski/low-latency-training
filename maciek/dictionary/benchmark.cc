@@ -65,6 +65,9 @@ BENCHMARK_TEMPLATE(NotInDictionary, HashDict1);
 BENCHMARK_TEMPLATE(InDictionary, HashDict2);
 BENCHMARK_TEMPLATE(NotInDictionary, HashDict2);
 
+BENCHMARK_TEMPLATE(InDictionary, HashDictWithModulo);
+BENCHMARK_TEMPLATE(NotInDictionary, HashDictWithModulo);
+
 BENCHMARK_TEMPLATE(InDictionary, HashDict);
 BENCHMARK_TEMPLATE(NotInDictionary, HashDict);
 
