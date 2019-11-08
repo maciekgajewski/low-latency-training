@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <iostream>
 #include <string>
 
 class HashDict {
@@ -10,9 +11,9 @@ public:
     buckets_.resize(findGoodSize(words.size()));
 
     for (const std::string &word : words) {
+      auto hash = std::hash<std::string_view>()(word);
+      auto index = indexFromHash(hash);
       while (true) {
-        auto hash = std::hash<std::string_view>()(word);
-        auto index = indexFromHash(hash);
         Bucket &bucket = buckets_[index];
         if (bucket.empty()) {
           bucket.assign(word);
@@ -53,9 +54,12 @@ private:
 
     Bucket() {} // TODO init empty bucket
 
-    bool empty() const { return true; }                       // TODO
-    bool equal(std::string_view word) const { return false; } // TODO
-    void assign(const std::string &word) {}                   // TODO
+    bool empty() const { return word_.empty(); }                      // TODO
+    bool equal(std::string_view word) const { return word_ == word; } // TODO
+    void assign(const std::string &word) { word_ = word; }            // TODO
+
+  private:
+    std::string word_;
   };
 
   std::vector<Bucket> buckets_;

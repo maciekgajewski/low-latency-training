@@ -47,14 +47,14 @@ static void NotInDictionary(benchmark::State &state) {
     throw std::runtime_error("Expected no words to be in");
 }
 
-BENCHMARK_TEMPLATE(InDictionary, SetDict);
-BENCHMARK_TEMPLATE(NotInDictionary, SetDict);
+// BENCHMARK_TEMPLATE(InDictionary, SetDict);
+// BENCHMARK_TEMPLATE(NotInDictionary, SetDict);
 
-BENCHMARK_TEMPLATE(InDictionary, TransparentSetDict);
-BENCHMARK_TEMPLATE(NotInDictionary, TransparentSetDict);
+// BENCHMARK_TEMPLATE(InDictionary, TransparentSetDict);
+// BENCHMARK_TEMPLATE(NotInDictionary, TransparentSetDict);
 
-BENCHMARK_TEMPLATE(InDictionary, UnorderedSetDict);
-BENCHMARK_TEMPLATE(NotInDictionary, UnorderedSetDict);
+// BENCHMARK_TEMPLATE(InDictionary, UnorderedSetDict);
+// BENCHMARK_TEMPLATE(NotInDictionary, UnorderedSetDict);
 
 BENCHMARK_TEMPLATE(InDictionary, NonAllocatingUnorderedSetDict);
 BENCHMARK_TEMPLATE(NotInDictionary, NonAllocatingUnorderedSetDict);
