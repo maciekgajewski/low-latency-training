@@ -1,5 +1,7 @@
 #include <benchmark/benchmark.h>
 
+#include "papipp.h"
+
 #include <algorithm>
 #include <random>
 #include <vector>
